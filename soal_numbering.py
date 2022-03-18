@@ -34,8 +34,8 @@ while True:
                 print("ERROR: " + str(e))
         amount = len(problems_dict)
         calc = ((amount - wrongs)/amount) * 100
-        print(f"Kamu mendapatkan score: {calc}, {wrongs}/{amount} dari soal salah.")
-        problems_dict['Score'] = f"{calc}, {wrongs}/{amount} salah"
+        print(f"You got score: {calc}, {wrongs}/{amount} wrong answers.")
+        problems_dict['Score'] = f"{calc}, {wrongs}/{amount} wrong."
     elif user_choice == '2':
         while True:
             num = input("Which number? Enter 'done' once you're done.\n> ")
