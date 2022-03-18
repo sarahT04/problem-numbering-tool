@@ -1,19 +1,20 @@
 
 from time import sleep
+import os 
 
-filename = r"C:\Users\hp\Documents\KODE Sarah"
+filename = os.path.dirname(os.path.realpath(__file__))  # Change your directory here.
 file_encode = '.txt'
 
 problems_dict = dict()
 
-problems_amount = int(input("Berapa banyak soal?\n> "))
+problems_amount = int(input("How many problems?\n> "))
 for num in range(1, problems_amount+1):
     problems_dict[num] = input(f"{num}. ").upper()
     
 while True:
     user_choice = input("Save, Input false problems, or look at answers?\n> ")
     if user_choice == '0':
-        save_as = input("Simpan dengan nama apa?\n> ")
+        save_as = input("With what name should it be saved?\n> ")
         new_filename = filename + '\\' + save_as + file_encode
         with open(new_filename, 'a') as f:
             for k, v in problems_dict.items():
