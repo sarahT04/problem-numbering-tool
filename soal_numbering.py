@@ -13,12 +13,11 @@ for num in range(1, problems_amount+1):
     problems_dict[num] = input(f"{num}. ").upper()
     
 
-def get_all_problems(func_dict: dict, row: int=3) -> str:
-    """_summary_
-
+def get_all_problems(func_dict: dict, row: int=5) -> str:
+    """get all the problems
     Args:
         func_dict (dict): the dict full of numbers and answers
-        row (int, optional): Amount of rows. Defaults to 3.
+        row (int, optional): Amount of rows. Defaults to 5.
 
     Returns:
         str: returns a row column of all answers.
@@ -28,11 +27,10 @@ def get_all_problems(func_dict: dict, row: int=3) -> str:
     s = ''
     for i in range(1, cols + 1):
         j = i
-        for c in range(1, row + 1):
+        for c in range(1, row):
             try:
-                p = func_dict[keys[j - 1]]
-                s += str(j) + '. '
-                s += str(p).ljust(3)
+                s += str(j + 1) + '. '
+                s += str(func_dict[keys[j - 1]]).ljust(3)
                 j += cols
             except IndexError as e:
                 print(str(e))
