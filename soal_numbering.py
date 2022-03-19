@@ -27,9 +27,9 @@ def get_all_problems(func_dict: dict, row: int=5) -> str:
     s = ''
     for i in range(1, cols + 1):
         j = i
-        for c in range(1, row):
+        for c in range(1, row + 1):
             try:
-                s += str(j + 1) + '. '
+                s += str(j) + '. '
                 s += str(func_dict[keys[j - 1]]).ljust(3)
                 j += cols
             except IndexError as e:
