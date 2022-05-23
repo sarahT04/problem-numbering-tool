@@ -9,7 +9,7 @@ problems_dict = dict()
 
 
 # Get user numbers
-problems_amount = int(input("Berapa banyak soal?\n> "))
+problems_amount = int(input("How many numbers?\n> "))
 for num in range(1, problems_amount+1):
     problems_dict[num] = input(f"{num}. ").upper()
     
@@ -45,7 +45,7 @@ def get_all_problems(func_dict: dict, row: int=3) -> str:
 while True:
     user_choice = input("Save, Input false problems, or look at answers?\n> ")
     if user_choice == '0' or user_choice == 'save':
-        save_as = input("Simpan dengan nama apa?\n> ")
+        save_as = input("Save as what name?\n> ")
         if not save_as:
             save_as = 'Untitled'
         new_filename = filename + '\\' + save_as + file_encode
@@ -68,7 +68,7 @@ while True:
                 wrongs += 1
                 amount = len(problems_dict)
                 calc = ((amount - wrongs)/amount) * 100
-                print(f"Kamu mendapatkan score: {calc}, {wrongs}/{amount} dari soal salah.")
+                print(f"Your score is: {calc}, {wrongs}/{amount} of wrong numbers.")
                 problems_dict['Score'] = f"{calc}, {wrongs}/{amount} salah" # Add to dictionary
             except Exception as e:
                 print("ERROR: " + str(e))
