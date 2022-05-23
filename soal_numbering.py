@@ -69,7 +69,7 @@ while True:
                 amount = len(problems_dict)
                 calc = ((amount - wrongs)/amount) * 100
                 print(f"Your score is: {calc}, {wrongs}/{amount} of wrong numbers.")
-                problems_dict['Score'] = f"{calc}, {wrongs}/{amount} salah" # Add to dictionary
+                problems_dict['Score'] = f"{calc}, {wrongs}/{amount} wrong" # Add to dictionary
             except Exception as e:
                 print("ERROR: " + str(e))
     elif user_choice == '2' or user_choice == 'look':
